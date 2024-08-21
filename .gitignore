@@ -1,0 +1,24 @@
+# 平台特殊文件
+.DS_Store
+
+# 代码编辑器(避免同步本地设置而造成潜在的合并冲突)
+.atom/
+.idea/
+.fleet/
+.vs/
+*.iml
+*.ipr
+*.iws
+*.sln
+*.swp
+
+# Node第三方库和锁文件(忽略锁文件是为了避免多镜像潜在合并冲突)
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lockb
+
+# VitePress编译输出文件
+docs/.vitepress/cache/
+docs/.vitepress/dist/

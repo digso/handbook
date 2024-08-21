@@ -1,0 +1,4 @@
+semi: false # 更推荐无需句尾分号的新标准TS和ESM。
+bracketSpacing: false # 大括号间无需空格以节省单行空间。
+vueIndentScriptAndStyle: true # vue中需要缩进以增强可读性。
+plugins: [prettier-plugin-sh] # ShellScript, .gitignore, .gitattributes
