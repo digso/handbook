@@ -1,25 +1,11 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: "数社软件开发手册"
-  text: "软件开发基础知识文档"
-  tagline: My great project tagline
+  name: 数社软件开发手册
+  text: 软件开发基础知识文档
+  tagline: 先进技术应当掌握在人民群众手中
   actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    - {theme: brand, text: 开始阅读, link: /flutter}
+    - {theme: alt, text: Flutter, link: /flutter}
 ---
-
