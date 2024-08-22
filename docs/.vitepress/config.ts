@@ -5,8 +5,20 @@ export default defineConfig({
   title: "数社软件开发手册",
   description: "软件开发基础知识文档",
   themeConfig: {
-    nav: [{text: "首页", link: "/"}],
-    sidebar: [{text: "Flutter", link: "/flutter"}],
+    nav: [
+      {text: "首页", link: "/"},
+      {text: "Flutter", link: "/flutter"},
+    ],
+    sidebar: [
+      {
+        text: "Flutter",
+        link: "/flutter",
+        items: [
+          {text: "Flutter环境搭建", link: "/flutter/env"},
+          {text: "Dart语法基础", link: "/flutter/dart"},
+        ],
+      },
+    ],
     socialLinks: [{icon: "github", link: "https://github.com/digso/handbook"}],
   },
 })
