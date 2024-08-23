@@ -49,8 +49,7 @@
 
   /**
    * 从给定侧边栏配置中获取当前页面的标题，若未找到则返回`undefined`。
-   * 这里所处理的仅是单个侧边栏，如果有多个侧边栏配置就要在
-   * {@link parseTitle} 中处理。
+   * 这里所处理的仅是单个侧边栏，若有多个侧边栏配置就应用 {@link parseTitle}。
    *
    * @param sidebar 从配置文件(.vitepress/config.ts)中获取的侧边栏结构
    * @param path 当前文件所在的路径(相对于服务器根目录的路径)

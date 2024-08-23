@@ -69,6 +69,23 @@ function lastCharCode(raw: string) {
   return raw.charCodeAt(raw.length - 1)
 }
 
+/** 在中英文之间添加空格。 */
+export function renderChineseSpaces(content: string) {
+  let handler = ""
+  let lastCutIndex = 0
+  let lastCharIsChinese = isChineseChar(content.charCodeAt(0))
+  for (let i = 1; i < content.length; i++) {
+    const charIsChinese = isChineseChar(content.charCodeAt(i))
+    if (charIsChinese !== lastCharIsChinese) {
+      const cutIndex = i
+      handler = content.substring(lastCutIndex, cutIndex) + " "
+      lastCutIndex = cutIndex
+    }
+    lastCharIsChinese = charIsChinese
+  }
+  return handler + content.substring(lastCutIndex)
+}
+
 /**
  * 换行的时候如果前后都是以空格分割单词的语言(例如英文)则添加空格。
  * 这里是在避免对中文内容添加额外的空格。
@@ -90,20 +107,7 @@ export function optimizeLineBreak(md: MarkdownIt) {
  */
 export function optimizeLanguageChangeBreak(md: MarkdownIt) {
   md.renderer.rules.text = function (tokens, index) {
-    const content = tokens[index].content
-    let handler = ""
-    let lastCutIndex = 0
-    let lastCharIsChinese = isChineseChar(content.charCodeAt(0))
-    for (let i = 1; i < content.length; i++) {
-      const charIsChinese = isChineseChar(content.charCodeAt(i))
-      if (charIsChinese !== lastCharIsChinese) {
-        const cutIndex = i
-        handler = content.substring(lastCutIndex, cutIndex) + " "
-        lastCutIndex = cutIndex
-      }
-      lastCharIsChinese = charIsChinese
-    }
-    return handler + content.substring(lastCutIndex)
+    return renderChineseSpaces(tokens[index].content)
   }
 }
 
