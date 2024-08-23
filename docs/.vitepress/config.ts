@@ -1,5 +1,5 @@
 import {defineConfig} from "vitepress"
-import sidebarMenu from "./menu"
+import {navMenu, sidebarMenu} from "./menu"
 import {wordless} from "./wordless"
 
 export default defineConfig({
@@ -9,13 +9,9 @@ export default defineConfig({
   title: "数社软件开发手册",
   description: "软件开发基础知识文档",
   themeConfig: {
-    nav: [
-      {text: "首页", link: "/"},
-      {text: "规范", link: "/spec/intro"},
-      {text: "Flutter", link: "/flutter/intro"},
-    ],
-    socialLinks: [{icon: "github", link: "https://github.com/digso/handbook"}],
+    nav: navMenu,
     sidebar: sidebarMenu,
+    socialLinks: [{icon: "github", link: "https://github.com/digso/handbook"}],
     outline: {label: "页面大纲", level: [1, 2]},
     docFooter: {prev: "前页", next: "后页"},
     editLink: {
