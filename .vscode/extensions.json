@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode", // 用Prettier自动规范代码格式。
+    "foxundermoon.shell-format", // 用prettier-plugin-sh自动规范代码格式。
+    "vue.volar", // 支持vue编程。
+    "yzhang.markdown-all-in-one" // 对markdown更好的的支持。
+  ]
+}
