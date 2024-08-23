@@ -74,3 +74,25 @@
     font-weight: 600;
   }
 </style>
+
+<style lang="scss">
+  div.vp-doc {
+    // 普通段落缩进并两端对齐，使中文排版更美观。
+    p {
+      text-indent: 2rem;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    // 除普通段落外的其他段落，如嵌套的内部段落，不添加缩进。
+    div.custom-block p {
+      text-indent: 0;
+    }
+
+    // 取消二级标题上面默认的分割线。
+    h2 {
+      margin-top: 32px;
+      border-top: none;
+    }
+  }
+</style>
