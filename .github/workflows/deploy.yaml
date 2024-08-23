@@ -1,0 +1,47 @@
+name: VitePress在部署静态网站
+
+on:
+  # 推送到主分支时触发更新网站部署的工作流。
+  push: {branches: [main]}
+  workflow_dispatch:
+
+# 给必要的权限。
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 提供所支持的环境。
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - uses: actions/configure-pages@v4
+
+      # 运行npm脚本安装依赖并检查，而后编译为静态网页。
+      - run: npm install
+      - run: npm run check
+      - run: npm run build
+
+      # 编译完成后将指定目录部署到 GitHub Pages。
+      - uses: actions/upload-pages-artifact@v3
+        with: {path: docs/.vitepress/dist}
+
+  # 部署到 GitHub Pages 的配置。
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: deploy
+    steps:
+      - name: deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v4
