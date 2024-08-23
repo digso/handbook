@@ -11,7 +11,8 @@ export default defineConfig({
   themeConfig: {
     nav: [
       {text: "首页", link: "/"},
-      {text: "Flutter", link: "/flutter/flutter"},
+      {text: "规范", link: "/spec/intro"},
+      {text: "Flutter", link: "/flutter/intro"},
     ],
     socialLinks: [{icon: "github", link: "https://github.com/digso/handbook"}],
     sidebar: sidebarMenu,

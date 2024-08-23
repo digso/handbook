@@ -42,14 +42,10 @@ function renderNestedMenu(raw: SidebarConfig): Sidebar {
 
 /** 所有侧边栏的配置，每个嵌套配置通过 {@link Map.set} 添加到其中。 */
 const sidebar: SidebarConfig = new Map()
+sidebar.set("spec", [{text: "数社编程规范", link: "intro"}])
 sidebar.set("flutter", [
-  {
-    text: "Flutter",
-    link: "flutter",
-    items: [
-      {text: "Flutter环境搭建", link: "env"},
-      {text: "Dart语法基础", link: "dart"},
-    ],
-  },
+  {text: "Flutter概述", link: "intro"},
+  {text: "Flutter环境搭建", link: "env"},
+  {text: "Dart语法基础", link: "dart"},
 ])
 export default renderNestedMenu(sidebar)
