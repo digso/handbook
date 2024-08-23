@@ -6,6 +6,6 @@ hero:
   text: 软件开发基础知识文档
   tagline: 先进技术应当掌握在人民群众手中
   actions:
-    - {theme: brand, text: 开始阅读, link: /flutter}
-    - {theme: alt, text: Flutter, link: /flutter}
+    - {theme: brand, text: 开始阅读, link: /flutter/flutter}
+    - {theme: alt, text: Flutter, link: /flutter/flutter}
 ---

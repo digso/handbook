@@ -9,16 +9,21 @@ export default defineConfig({
       {text: "首页", link: "/"},
       {text: "Flutter", link: "/flutter"},
     ],
-    sidebar: [
-      {
-        text: "Flutter",
-        link: "/flutter",
+    sidebar: {
+      "/flutter/": {
+        base: "/flutter/",
         items: [
-          {text: "Flutter环境搭建", link: "/flutter/env"},
-          {text: "Dart语法基础", link: "/flutter/dart"},
+          {
+            text: "Flutter",
+            link: "/flutter",
+            items: [
+              {text: "Flutter环境搭建", link: "/env"},
+              {text: "Dart语法基础", link: "/dart"},
+            ],
+          },
         ],
       },
-    ],
+    },
     socialLinks: [{icon: "github", link: "https://github.com/digso/handbook"}],
   },
 })
