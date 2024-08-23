@@ -16,7 +16,7 @@ export default defineConfig({
       }),
     ],
   },
-  base: "/handbook/docs/",
+  base: "/handbook/",
   lang: "zh-CN",
   title: "数社软件开发手册",
   description: "软件开发基础知识文档",

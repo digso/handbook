@@ -16,6 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # 编译构造步骤。
   build:
     runs-on: ubuntu-latest
     steps:
@@ -33,7 +34,7 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with: {path: docs/.vitepress/dist}
 
-  # 部署到 GitHub Pages 的配置。
+  # 部署步骤。
   deploy:
     environment:
       name: github-pages
