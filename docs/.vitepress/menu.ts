@@ -3,7 +3,13 @@ import {ensurePrefix, ensureSuffix, removePrefix} from "./utils"
 import {renderChineseSpaces} from "./wordless"
 
 interface Menu {
-  [base: string]: {nav: string; items: DefaultTheme.SidebarItem[]}
+  [base: string]: {
+    /** 在顶部导航栏中显示的文字。 */
+    nav: string
+
+    /** 在侧边栏所需要显示的目录。 */
+    items: DefaultTheme.SidebarItem[]
+  }
 }
 
 /**
