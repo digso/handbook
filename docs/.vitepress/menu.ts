@@ -49,7 +49,7 @@ function renderSidebarMenus(raw: Menu): DefaultTheme.Sidebar {
  * {@link DefaultTheme.NavItem}[] 格式的导航栏。
  */
 function renderNavigatorMenus(raw: Menu): DefaultTheme.NavItem[] {
-  const handler: DefaultTheme.NavItem[] = []
+  const handler: DefaultTheme.NavItem[] = [{text: "首页", link: "/"}]
   for (const key of Object.keys(raw)) {
     const value = raw[key]
     const base = ensurePrefix(ensureSuffix(key, "/"), "/")
@@ -63,7 +63,8 @@ const menu: Menu = {
   spec: {nav: "规范", items: [{text: "数社编程规范", link: "intro"}]},
   vscode: {nav: "编辑器", items: [{text: "VSCode代码编辑器", link: "intro"}]},
   git: {nav: "版本控制", items: [{text: "Git版本控制", link: "intro"}]},
-  web: {nav: "网页开发", items: [{text: "网页开发基础", link: "intro"}]},
+  web: {nav: "互联网", items: [{text: "互联网和网页知识", link: "intro"}]},
+  cloud: {nav: "服务器", items: [{text: "服务器运维", link: "intro"}]},
   vue: {nav: "Vue", items: [{text: "Vue网页应用开发", link: "intro"}]},
   flutter: {
     nav: "Flutter",
@@ -73,6 +74,9 @@ const menu: Menu = {
       {text: "Dart语法基础", link: "dart"},
     ],
   },
+  go: {nav: "Go", items: [{text: "Go服务器开发", link: "intro"}]},
+  rust: {nav: "Rust", items: [{text: "Rust编程语言", link: "intro"}]},
+  native: {nav: "原生开发", items: [{text: "原生平台开发", link: "intro"}]},
 }
 
 export const sidebarMenu = renderSidebarMenus(menu)
