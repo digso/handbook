@@ -1,4 +1,4 @@
-import MarkdownIt from "markdown-it"
+import {default as MarkdownIt} from "markdown-it"
 
 /** 需要在单词之间添加空格的常见语言的Unicode编码。 */
 const wordfulCharRanges: [number, number][] = [
@@ -28,13 +28,12 @@ function lastCharCode(raw: string) {
  * 这里是在避免对中文内容添加额外的空格。
  */
 export function optimizeLineBreak(md: MarkdownIt) {
-  md.renderer.rules.softbreak = function (tokens) {
-    if (tokens.length === 3) {
-      const before = lastCharCode(tokens[0].content)
-      const after = firstCharCode(tokens[2].content)
-      if (isWordfulChar(before) && isWordfulChar(after)) {
-        return " "
-      }
+  md.renderer.rules.softbreak = function (tokens, index) {
+    const before = lastCharCode(tokens[index - 1].content)
+    const after = firstCharCode(tokens[index + 1].content)
+    console.log("it works")
+    if (isWordfulChar(before) && isWordfulChar(after)) {
+      return " "
     }
     return ""
   }
