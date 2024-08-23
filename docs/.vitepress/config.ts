@@ -1,9 +1,21 @@
 import {defineConfig} from "vitepress"
+import {chineseSearchOptimize, pagefindPlugin} from "vitepress-plugin-pagefind"
 import {navMenu, sidebarMenu} from "./menu"
 import {wordless} from "./wordless"
 
 export default defineConfig({
   markdown: {config: (md) => md.use(wordless)},
+  vite: {
+    plugins: [
+      pagefindPlugin({
+        btnPlaceholder: "全局搜索",
+        placeholder: "全局搜索关键词",
+        emptyText: "找不到相关内容",
+        heading: "共: {{searchResult}} 条结果",
+        customSearchQuery: chineseSearchOptimize,
+      }),
+    ],
+  },
   base: "/handbook/docs/",
   lang: "zh-CN",
   title: "数社软件开发手册",
