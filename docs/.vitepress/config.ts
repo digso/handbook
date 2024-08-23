@@ -1,4 +1,5 @@
 import {defineConfig} from "vitepress"
+import sidebarMenu from "./menu"
 
 export default defineConfig({
   base: "/handbook/docs/",
@@ -7,23 +8,9 @@ export default defineConfig({
   themeConfig: {
     nav: [
       {text: "首页", link: "/"},
-      {text: "Flutter", link: "/flutter"},
+      {text: "Flutter", link: "/flutter/flutter"},
     ],
-    sidebar: {
-      "/flutter/": {
-        base: "/flutter/",
-        items: [
-          {
-            text: "Flutter",
-            link: "/flutter",
-            items: [
-              {text: "Flutter环境搭建", link: "/env"},
-              {text: "Dart语法基础", link: "/dart"},
-            ],
-          },
-        ],
-      },
-    },
+    sidebar: sidebarMenu,
     socialLinks: [{icon: "github", link: "https://github.com/digso/handbook"}],
   },
 })
