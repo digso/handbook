@@ -1,10 +1,9 @@
 import {Theme} from "vitepress"
 import DefaultTheme from "vitepress/theme"
-import Title from "../components/Title.vue"
+import CustomLayout from "./CustomLayout.vue"
 
 export default {
   extends: DefaultTheme,
-  enhanceApp({app}) {
-    app.component("Title", Title)
-  },
+  Layout: CustomLayout,
+  enhanceApp({app}) {},
 } satisfies Theme
