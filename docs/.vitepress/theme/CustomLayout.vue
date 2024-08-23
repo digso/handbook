@@ -7,21 +7,12 @@
 </script>
 
 <script lang="ts">
-  function ensurePrefix(raw: string, prefix: string) {
-    return raw.startsWith(prefix) ? raw : prefix + raw
-  }
-
-  function ensureSuffix(raw: string, suffix: string) {
-    return raw.endsWith(suffix) ? raw : raw + suffix
-  }
-
-  function removePrefix(raw: string, prefix: string) {
-    return raw.startsWith(prefix) ? raw.slice(prefix.length) : raw
-  }
-
-  function capitalCase(raw: string) {
-    return raw.charAt(0).toUpperCase() + raw.slice(1)
-  }
+  import {
+    ensurePrefix,
+    ensureSuffix,
+    maybeCapitalCase,
+    removePrefix,
+  } from "../utils"
 
   /**
    * 对{@link parseSidebar}的封装，以直接从{@link useData}中获取数据。
@@ -72,7 +63,7 @@
   <Layout>
     <!-- 所有doc页面自动显示标题 -->
     <template v-if="parseTitle(theme, page)" #doc-before>
-      <h1 class="title">{{ capitalCase(parseTitle(theme, page)) }}</h1>
+      <h1 class="title">{{ maybeCapitalCase(parseTitle(theme, page)) }}</h1>
     </template>
   </Layout>
 </template>

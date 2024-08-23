@@ -1,18 +1,24 @@
 import {DefaultTheme} from "vitepress"
+import {ensurePrefix} from "./utils"
 import {renderChineseSpaces} from "./wordless"
 
 type Sidebar = DefaultTheme.Sidebar
 type SidebarItem = DefaultTheme.SidebarItem
 type SidebarConfig = Map<string, SidebarItem[]>
 
-/** 对单个侧边栏进行中英文之间添加空格的渲染处理。 */
-function renderSingleSidebarChinese(raw: SidebarItem[]) {
+/**
+ * 对单个侧边栏目录({@link DefaultTheme.Sidebar}[])进行预处理。
+ * 1. 确保所有链接都以 "/" 开头以避免路径错误。
+ * 2. 对单个侧边栏进行中英文之间添加空格的渲染处理。
+ */
+function renderSingleSidebar(raw: SidebarItem[]) {
   const handler: SidebarItem[] = []
   for (const item of raw) {
     const temp: SidebarItem = {
       ...item,
       text: item.text ? renderChineseSpaces(item.text) : item.text,
-      items: item.items ? renderSingleSidebarChinese(item.items) : item.items,
+      link: item.link ? ensurePrefix(item.link, "/") : item.link,
+      items: item.items ? renderSingleSidebar(item.items) : item.items,
     }
     handler.push(temp)
   }
@@ -29,7 +35,7 @@ function renderSingleSidebarChinese(raw: SidebarItem[]) {
 function renderNestedMenu(raw: SidebarConfig): Sidebar {
   const handler: Sidebar = {}
   for (const [key, value] of raw) {
-    handler[key] = {base: key, items: renderSingleSidebarChinese(value)}
+    handler[key] = {base: key, items: renderSingleSidebar(value)}
   }
   return handler
 }
@@ -41,8 +47,8 @@ sidebar.set("flutter", [
     text: "Flutter",
     link: "flutter",
     items: [
-      {text: "Flutter环境搭建", link: "/env"},
-      {text: "Dart语法基础", link: "/dart"},
+      {text: "Flutter环境搭建", link: "env"},
+      {text: "Dart语法基础", link: "dart"},
     ],
   },
 ])
