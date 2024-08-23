@@ -16,7 +16,7 @@ export default defineConfig({
     docFooter: {prev: "前页", next: "后页"},
     editLink: {
       text: "在 GitHub 上编辑此页面",
-      pattern: "https://github.com/aprosail/notes/edit/dev/:path",
+      pattern: "https://github.com/digso/handbook/edit/dev/:path",
     },
     lastUpdated: {
       text: "最近更新时间",
