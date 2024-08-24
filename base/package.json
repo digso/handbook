@@ -13,8 +13,10 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
+    "rollup-plugin-dts": "^6.1.1",
     "typescript": "^5.5.4",
     "vite": "^5.4.2",
+    "vite-plugin-dts": "^4.0.3",
     "vue-tsc": "^2.0.29"
   }
 }
