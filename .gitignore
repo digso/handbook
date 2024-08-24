@@ -19,6 +19,7 @@ pnpm-lock.yaml
 yarn.lock
 bun.lockb
 
-# VitePress编译输出文件
+# 编译输出文件
 docs/.vitepress/cache/
 docs/.vitepress/dist/
+dist/
