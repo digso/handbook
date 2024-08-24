@@ -6,7 +6,7 @@
   "private": true,
   "main": "dist/handbook.cjs",
   "module": "dist/handbook.js",
-  "types": "dist/handbook.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "vue-tsc -b && vite build"
   },

@@ -12,7 +12,7 @@
     ensureSuffix,
     maybeCapitalCase,
     removePrefix,
-  } from "./handbook"
+  } from "./utils"
 
   /**
    * 对{@link parseSidebar}的封装，以直接从{@link useData}中获取数据。
