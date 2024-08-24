@@ -78,7 +78,7 @@ export function renderChineseSpaces(content: string) {
     const charIsChinese = isChineseChar(content.charCodeAt(i))
     if (charIsChinese !== lastCharIsChinese) {
       const cutIndex = i
-      handler = content.substring(lastCutIndex, cutIndex) + " "
+      handler += content.substring(lastCutIndex, cutIndex) + " "
       lastCutIndex = cutIndex
     }
     lastCharIsChinese = charIsChinese
