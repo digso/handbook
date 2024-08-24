@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [vue(), dts()],
   build: {
     lib: {
-      entry: "index.ts",
-      name: "handbook",
+      entry: "handbook.ts",
+      name: "Handbook",
       fileName: "handbook",
       formats: ["cjs", "es"],
     },

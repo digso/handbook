@@ -1,6 +1,10 @@
 import {DefaultTheme} from "vitepress"
-import {ensurePrefix, ensureSuffix, removePrefix} from "./utils"
-import {renderChineseSpaces} from "./wordless"
+import {
+  ensurePrefix,
+  ensureSuffix,
+  removePrefix,
+  renderChineseSpaces,
+} from "vitepress-handbook"
 
 interface Menu {
   [base: string]: {

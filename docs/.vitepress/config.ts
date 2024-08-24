@@ -1,7 +1,7 @@
 import {defineConfig} from "vitepress"
+import {wordless} from "vitepress-handbook"
 import {chineseSearchOptimize, pagefindPlugin} from "vitepress-plugin-pagefind"
 import {navMenu, sidebarMenu} from "./menu"
-import {wordless} from "./wordless"
 
 export default defineConfig({
   markdown: {config: (md) => md.use(wordless)},
