@@ -9,7 +9,7 @@ export default defineConfig({
       entry: "index.ts",
       name: "handbook",
       fileName: "handbook",
-      formats: ["es", "umd"],
+      formats: ["cjs", "es"],
     },
     sourcemap: true,
     outDir: "dist",
