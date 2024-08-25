@@ -2,7 +2,7 @@ import {DefaultTheme} from "vitepress"
 import {ensurePrefix, ensureSuffix, removePrefix} from "./utils"
 import {renderChineseSpaces} from "./wordless"
 
-interface Menu {
+export interface Menu {
   [base: string]: {
     /** 在顶部导航栏中显示的文字。 */
     nav: string
@@ -35,7 +35,7 @@ function renderSingleSidebar(raw: DefaultTheme.SidebarItem[]) {
  * 从所给 {@link Menu} 类型的目录中提取符合
  * {@link DefaultTheme.Sidebar} 格式的侧边栏目录。
  */
-function renderSidebarMenus(raw: Menu): DefaultTheme.Sidebar {
+export function renderSidebarMenus(raw: Menu): DefaultTheme.Sidebar {
   const handler: DefaultTheme.Sidebar = {}
   for (const key of Object.keys(raw)) {
     const value = raw[key]
@@ -48,7 +48,7 @@ function renderSidebarMenus(raw: Menu): DefaultTheme.Sidebar {
  * 从所给 {@link Menu} 类型的目录中提取符合
  * {@link DefaultTheme.NavItem}[] 格式的导航栏。
  */
-function renderNavigatorMenus(raw: Menu): DefaultTheme.NavItem[] {
+export function renderNavigatorMenus(raw: Menu): DefaultTheme.NavItem[] {
   const handler: DefaultTheme.NavItem[] = [{text: "首页", link: "/"}]
   for (const key of Object.keys(raw)) {
     const value = raw[key]
