@@ -1,6 +1,6 @@
 import {DefaultTheme} from "vitepress"
 import {ensurePrefix, ensureSuffix, removePrefix} from "./utils"
-import {renderChineseSpaces} from "./wordless"
+import {renderWordlessChangeSpace} from "./wordless"
 
 export interface Menu {
   [base: string]: {
@@ -22,7 +22,7 @@ function renderSingleSidebar(raw: DefaultTheme.SidebarItem[]) {
   for (const item of raw) {
     const temp: DefaultTheme.SidebarItem = {
       ...item,
-      text: item.text ? renderChineseSpaces(item.text) : item.text,
+      text: item.text ? renderWordlessChangeSpace(item.text) : item.text,
       link: item.link ? ensurePrefix(item.link, "/") : item.link,
       items: item.items ? renderSingleSidebar(item.items) : item.items,
     }

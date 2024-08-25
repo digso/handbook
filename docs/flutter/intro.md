@@ -1,0 +1,4 @@
+Flutter是跨平台的开发架构，
+官方支持了桌面端的Windows, macOS和Linux三种常见的操作系统、
+移动端的Android和iOS两种最常见的操作系统，
+还能编译为网页在浏览器中运行。
