@@ -1,0 +1,12 @@
+name: 检查代码格式是否符合规范
+on: {push: {branches: [dev]}} # 将格式问题拦截在dev分支。
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      # 检查代码格式并确保能够编译。
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+      - run: npm install
+      - run: npm run check
+      - run: npm run build
