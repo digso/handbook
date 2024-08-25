@@ -1,9 +1,5 @@
 import {Theme} from "vitepress"
+import {Handbook} from "vitepress-handbook"
 import DefaultTheme from "vitepress/theme"
-import CustomLayout from "./CustomLayout.vue"
 
-export default {
-  extends: DefaultTheme,
-  Layout: CustomLayout,
-  // enhanceApp({app}) {},
-} satisfies Theme
+export default {extends: DefaultTheme, Layout: Handbook} satisfies Theme

@@ -4,14 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "private": true,
-  "main": "dist/handbook.cjs",
-  "module": "dist/handbook.js",
+  "main": "dist/handbook.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "vue-tsc -b && vite build"
   },
   "dependencies": {
+    "markdown-it": "^14.1.0",
+    "pagefind": "^1.1.0",
     "vitepress": "^1.3.3",
+    "vitepress-plugin-pagefind": "^0.4.10",
     "vue": "^3.4.38"
   },
   "devDependencies": {

@@ -15,8 +15,8 @@ export default defineConfig({
     outDir: "dist",
     emptyOutDir: true,
     rollupOptions: {
-      external: ["vitepress", "vue"],
-      output: {globals: {vitepress: "VitePress", vue: "Vue"}, compact: false},
+      external: ["vitepress", "vitepress/theme", "vue"],
+      // output: {compact: false},
     },
   },
 })
